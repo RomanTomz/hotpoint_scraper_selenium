@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# todo: add url from base url + href
-
-
-# In[50]:
-
-
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -22,11 +10,6 @@ import numpy as np
 
 
 from time import sleep
-
-# from bs4 import BeautifulSoup
-
-
-# In[59]:
 
 
 driver = webdriver.Chrome(executable_path='/Users/admin/.wdm/drivers/chromedriver/mac64/98.0.4758.80/chromedriver')
@@ -96,25 +79,6 @@ df = pd.DataFrame(np.column_stack([names_list, avail_list, price_list, models_li
                                columns=['name', 'availability', 'price', 'model','part_type'])           
 
 driver.quit()
-
-
-# In[60]:
-
-
-df
-
-
-# In[53]:
-
-
-# spares = driver.find_elements_by_xpath("//div[@class='smartukb2c-custom-product-page-0-x-customProductPageSparePartsCard']")
-# for spare in spares:
-#     name = spare.find_element_by_xpath(".//div[@class='smartukb2c-custom-product-page-0-x-customProductPageSparePartsCardInfo']/a").text
-#     availability = spare.find_element_by_xpath(".//div[@class='smartukb2c-custom-product-page-0-x-availabilityDiv']").text
-#     print(name,availability)
-
-
-# In[ ]:
 
 
 
